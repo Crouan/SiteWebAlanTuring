@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: auto; /* Permettre le défilement */
+    scrollbar-width: thin; /* Largeur de la barre de défilement (surtout pour Firefox) */
+    scrollbar-color: transparent transparent; /* Couleur de la barre de défilement (surtout pour Firefox) */
+    -ms-overflow-style: none; /* Masquer la barre de défilement pour Internet Explorer et Edge */
+}
+
+/* Masquer la barre de défilement pour Chrome, Safari et Opera */
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 2em;
+}
+
+
+/* ----------------------------------------------- Navbar ----------------------------------------------- */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background: #dcb98c;
+;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    color: #000;
+    font-size: large;
+}
+
+.navbar{
+    margin-left: auto;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 9%;
+    background: #000;
+    transition: .3s;
+}
+
+.navbar a:hover::before{
+    width: 102%;
+}
+
+/* ----------------------------------------------- Humberger ----------------------------------------------- */
+
+.ahum, button {
+    cursor: pointer;
+}
+
+.navhum {
+    position: relative;
+    top: 100px;
+    left: 50px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.navigation {
+    position: fixed;
+    left: -500px;
+    width: 350px;
+    height: 100%;
+    background-color: #000;
+    transition: .5s;
+    z-index: 100;
+}
+
+.navigation ul li {
+    color: #fff;
+    text-align: left; 
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    border-bottom: 1pt solid #252525;
+}
+
+
+.hamburger, .bar {
+    position: fixed;
+}
+
+.hamburger {
+    display: block;
+    top: 4.2%;
+    left: 3.8%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+}
+
+.bar {
+    top: 3px;
+    background: #000;
+    width: 100%;
+    height: 4px;
+    transition: all .3s ease-in;
+}
+
+#bar2 {
+    top: 11px;
+}
+
+#bar3 {
+    top: 19px;
+}
+
+.navigation.active {
+    left: 0;
+}
+
+.hamburger.open #bar1 {
+    background-color: #dcb98c;
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+.hamburger.open #bar2 {
+    background-color: transparent;
+}
+
+.hamburger.open #bar3 {
+    background-color: #dcb98c;
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+/* ----------------------------------------------- Image Principale ----------------------------------------------- */
+
+.imagePrincipale{
+    padding-top: 60px;
+    background: url(media/fd_enigma.jpg) no-repeat fixed 50% 50%;
+    background-size: cover;
+    height: 100vh;
+    
+}
+h1{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    color: antiquewhite;
+    font-size: 6em;
+    margin-top: 100px;
+    text-shadow: 1px 3px 2px black;
+}
+.premierTrait{
+    height: 1px;
+    width: 25%;
+    margin: -3px auto;
+    background-color: #FFFAE1;
+    text-shadow: 1px 3px 2px black;
+}
+h3{
+    text-align: center;
+    color: antiquewhite;
+    font-size: 3em;
+    text-shadow: 1px 3px 2px black;
+}
+
+/* ----------------------------------------------- Presentation ----------------------------------------------- */
+
+.presentation {
+    background-color: #FFFAE1;
+    padding: 10px 0px 100px 0;
+}
+.texteIntro{
+    padding: 0px 20%;
+    text-align: justify;
+}
+
+/* ----------------------------------------------- Articles ----------------------------------------------- */
+
+.allArticle{
+    height: 1400px;
+    background-color: #f1f2f6;
+    padding: 1px 2%;
+    text-align: "justify"
+}
+
+.tourisme h2{
+    padding-top: 60px;
+}
+
+article { 
+    padding: 15px; 
+    margin-bottom: 80px; 
+    width: 80%;
+    background-color: #d9c383;
+    margin: 0 auto 80px;
+    border: 3.5px solid #704744;
+    border-radius: 15px;
+}
+
+article p{
+    text-align: justify;
+    color: #000;
+}
+
+.allArticle ul {
+    text-align: center; /* Centrer le texte à l'intérieur de la liste */
+    padding: 0; /* Supprimer le padding par défaut de la liste */
+    list-style: none;
+    margin: 0;
+}
+
+
+.title1, .title2, .title3, .title4, .title5, .title6, .title7 {
+    height: 45px;
+    width: 380px;
+    background-color: #dcb98c;
+    margin: 0px auto;
+    font-size: 1.5em;
+    text-align: center;
+    border: 3.5px solid #704744;
+    border-radius: 40px;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title1 p, .title2 p, .title3 p, .title4 p, .title5 p, .title6 p, .title7 p {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    font-size: large;
+}
+
+
+/* ----------------------------------------------- Images ----------------------------------------------- */
+
+.image1, .image2, .image3, .image4, .image5 {
+    display: block; 
+    margin: 0 auto;
+    box-shadow: 10px 10px 10px #0000008d;
+}
+
+.image1{
+    width: 400px;
+    height: auto; 
+}
+
+.image2{
+    width: 400px;
+    height: auto; 
+}
+
+.image3{
+    width: 300px;
+    height: auto; 
+}
+
+.image4{
+    width: 200px;
+    height: auto; 
+}
+
+.image5{
+    width: 400px;
+    height: auto; 
+}
+
+/* ----------------------------------------------- Video ----------------------------------------------- */
+
+.video{
+    text-align: center;
+}
+
+/* ----------------------------------------------- Footer ----------------------------------------------- */
+
+footer{
+    background-color: #524A3A;
+    color: #FFFAE1;
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+
+#deuxiemeTrait{
+    height: 1px;
+    width: 75%;
+    background-color: #FFFAE1;
+    margin: 30px auto;
+}
+#copyrightEtIcons{
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0 10%;
+}
+#copyright{
+    width: 50%;
+    text-align: left;
+    color: #FFFAE1;
+}
+#icons{
+    width: 50%;
+    text-align: right;
+}
+#icons a{
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.3em;
+    color: #FFFAE1;
+}
+#icons a:hover{
+    transform: scale(1.5);
+    transition: 0.1s;
+
+}
